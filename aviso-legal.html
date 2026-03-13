@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aviso Legal de Equilibra - Centro de Bienestar Integral">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Aviso Legal | Equilibra</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #a85442;
+            --primary-dark: #8b4235;
+            --accent: #d4816f;
+            --text-dark: #2d2d2d;
+            --text-light: #666;
+            --bg-light: #faf8f6;
+            --white: #ffffff;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.8; color: var(--text-dark); background: var(--white); }
+
+        /* Header */
+        .site-header { position: sticky; top: 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); z-index: 100; padding: 14px 20px; }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .header-back { display: flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: gap 0.2s; }
+        .header-back:hover { gap: 12px; }
+
+        /* Hero legal */
+        .legal-hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; padding: 50px 20px; text-align: center; }
+        .legal-hero h1 { font-size: 2rem; margin-bottom: 10px; }
+        .legal-hero p { opacity: 0.85; font-size: 0.95rem; }
+
+        /* Contenido */
+        .legal-container { max-width: 860px; margin: 0 auto; padding: 60px 20px 80px; }
+        .toc { background: var(--bg-light); border-radius: 10px; padding: 28px 32px; margin-bottom: 50px; }
+        .toc h3 { color: var(--primary); font-size: 1rem; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; }
+        .toc ol { padding-left: 20px; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; font-size: 0.92rem; }
+        .toc a:hover { text-decoration: underline; }
+
+        .legal-section { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid #eee; }
+        .legal-section:last-child { border-bottom: none; }
+        .legal-section h2 { color: var(--primary); font-size: 1.35rem; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--bg-light); }
+        .legal-section h3 { color: var(--text-dark); font-size: 1.05rem; margin: 22px 0 10px; }
+        .legal-section p { color: var(--text-light); margin-bottom: 14px; }
+        .legal-section ul, .legal-section ol { padding-left: 22px; margin-bottom: 14px; }
+        .legal-section li { color: var(--text-light); margin-bottom: 6px; }
+        .dato { background: var(--bg-light); border-left: 3px solid var(--primary); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+        .dato p { margin: 0; color: var(--text-dark); font-size: 0.95rem; line-height: 1.9; }
+        .update-date { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-light); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; color: var(--text-light); margin-bottom: 40px; }
+
+        /* Footer */
+        footer { background: var(--primary-dark); color: rgba(255,255,255,0.85); padding: 40px 20px; text-align: center; }
+        footer h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        footer p { font-size: 0.88rem; opacity: 0.75; line-height: 1.8; }
+        footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .footer-links { display: flex; gap: 20px; justify-content: center; margin: 14px 0; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.85rem; color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; }
+        .footer-links a:hover { color: #fff; border-color: #fff; }
+        
+        /* === Nav === */
+        .nav-menu { display: flex; align-items: center; }
+        .nav-menu ul { display: flex; gap: 4px; list-style: none; padding: 0; margin: 0; }
+        .nav-menu li { border: none; }
+        .nav-menu a { padding: 8px 12px; font-size: 0.88rem; border-radius: 5px; color: var(--text-dark); text-decoration: none; font-weight: 500; transition: color 0.2s, background 0.2s; }
+        .nav-menu a:hover { color: var(--primary); background: var(--bg-light); }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1002; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s ease; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .nav-menu { display: none; position: fixed; top: 62px; left: 0; right: 0; background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.15); padding: 16px 20px; z-index: 1000; }
+            .nav-menu.active { display: block; }
+            .nav-menu ul { flex-direction: column; gap: 0; }
+            .nav-menu li { border-bottom: 1px solid #eee; }
+            .nav-menu li:last-child { border-bottom: none; }
+            .nav-menu a { padding: 13px 10px; font-size: 0.95rem; }
+        }
+        </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Equili<span>bra</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="masaje-terapeutico.html">Masaje Terapéutico</a></li>
+                    <li><a href="nutricion-dietetica.html">Nutrición y Dietética</a></li>
+                    <li><a href="psicologia-bienestar.html">Psicología y Bienestar</a></li>
+                    <li><a href="pilates-terapeutico.html">Pilates Terapéutico</a></li>
+                    <li><a href="osteopatia.html">Osteopatía</a></li>
+                    <li><a href="equinoterapia-finca.html">Equinoterapia</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="tel:+34600123456" class="header-phone" aria-label="Llamar a Equilibra">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>600 123 456</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="legal-hero">
+        <h1>Aviso Legal</h1>
+        <p>Información legal del sitio web de Equilibra — Centro de Bienestar Integral</p>
+    </section>
+
+    <div class="legal-container">
+        <p class="update-date"><i class="fa-regular fa-calendar"></i> Última actualización: enero de 2026</p>
+
+        <div class="toc">
+            <h3>Índice de contenidos</h3>
+            <ol>
+                <li><a href="#identificacion">Datos identificativos del titular</a></li>
+                <li><a href="#objeto">Objeto y ámbito de aplicación</a></li>
+                <li><a href="#uso">Condiciones de uso</a></li>
+                <li><a href="#propiedad">Propiedad intelectual e industrial</a></li>
+                <li><a href="#responsabilidad">Limitación de responsabilidad</a></li>
+                <li><a href="#legislacion">Legislación aplicable y jurisdicción</a></li>
+            </ol>
+        </div>
+
+        <div class="legal-section" id="identificacion">
+            <h2>1. Datos identificativos del titular</h2>
+            <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se ponen a disposición del usuario los siguientes datos identificativos:</p>
+            <div class="dato">
+                <p>
+                    <strong>Titular:</strong> [Nombre del titular o razón social]<br>
+                    <strong>NIF/CIF:</strong> [NIF o CIF del titular]<br>
+                    <strong>Actividad:</strong> Centro de Bienestar Integral — Servicios de salud y bienestar<br>
+                    <strong>Domicilio:</strong> [Dirección completa], [Localidad], [Provincia]<br>
+                    <strong>Teléfono:</strong> <a href="tel:+34600123456">600 123 456</a><br>
+                    <strong>Correo electrónico:</strong> <a href="mailto:info@equilibra.es">info@equilibra.es</a><br>
+                    <strong>Sitio web:</strong> <a href="index.html">equilibra.es</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="legal-section" id="objeto">
+            <h2>2. Objeto y ámbito de aplicación</h2>
+            <p>El presente aviso legal regula el acceso y uso del sitio web de <strong>Equilibra — Centro de Bienestar Integral</strong> (en adelante, "el sitio web"), así como los servicios e información disponibles a través de él.</p>
+            <p>El acceso y uso del sitio web implica la aceptación plena y sin reservas de todas las condiciones incluidas en este aviso legal. Si el usuario no está de acuerdo con las condiciones aquí expuestas, deberá abstenerse de acceder o utilizar el sitio web.</p>
+            <p>Equilibra presta servicios de bienestar integral que incluyen masaje terapéutico, nutrición y dietética, psicología y bienestar, pilates terapéutico y osteopatía, entre otros.</p>
+        </div>
+
+        <div class="legal-section" id="uso">
+            <h2>3. Condiciones de uso</h2>
+            <p>El usuario se compromete a utilizar el sitio web de conformidad con la ley, la moral y las buenas costumbres, y en particular se compromete a no:</p>
+            <ul>
+                <li>Reproducir, copiar, distribuir, poner a disposición o de cualquier otra forma comunicar públicamente los contenidos del sitio web sin la autorización expresa del titular.</li>
+                <li>Utilizar el sitio web con fines ilegales, fraudulentos o contrarios a la buena fe.</li>
+                <li>Intentar acceder a áreas restringidas de los sistemas informáticos del titular.</li>
+                <li>Introducir o difundir en la red virus informáticos o cualesquiera otros sistemas físicos o lógicos que sean susceptibles de provocar daños.</li>
+                <li>Suplantar a otros usuarios o a terceras personas.</li>
+            </ul>
+        </div>
+
+        <div class="legal-section" id="propiedad">
+            <h2>4. Propiedad intelectual e industrial</h2>
+            <p>Todos los contenidos del sitio web —incluyendo textos, fotografías, gráficos, imágenes, iconos, diseño gráfico, estructura y códigos fuente— son propiedad intelectual del titular o de terceros que han autorizado su uso, sin que pueda entenderse cedido al usuario ningún derecho de explotación sobre los mismos.</p>
+            <p>Las marcas, nombres comerciales o signos distintivos que aparecen en el sitio web son propiedad del titular o de terceros y están protegidos por la legislación vigente en materia de propiedad industrial.</p>
+            <p>Queda expresamente prohibida la reproducción, distribución, comunicación pública, transformación o cualquier otra actividad que se realice con los contenidos del sitio web sin autorización escrita del titular.</p>
+        </div>
+
+        <div class="legal-section" id="responsabilidad">
+            <h2>5. Limitación de responsabilidad</h2>
+            <p>El titular no se hace responsable de:</p>
+            <ul>
+                <li>Los fallos e incidencias que pudieran producirse en las comunicaciones, borrado o transmisiones incompletas.</li>
+                <li>La falta de disponibilidad, mantenimiento y efectivo funcionamiento del sitio web o de sus servicios y contenidos.</li>
+                <li>La existencia de virus, programas maliciosos o lesivos en los contenidos.</li>
+                <li>Los daños producidos por un uso ilícito, negligente, fraudulento o contrario al presente aviso legal.</li>
+                <li>Los contenidos de otros sitios web enlazados desde este sitio web.</li>
+            </ul>
+            <p>La información disponible en este sitio web tiene carácter meramente informativo y no sustituye en ningún caso la consulta personalizada con un profesional de la salud.</p>
+        </div>
+
+        <div class="legal-section" id="legislacion">
+            <h2>6. Legislación aplicable y jurisdicción</h2>
+            <p>Las relaciones entre el titular y el usuario se regirán por la legislación española vigente. Para cualquier controversia que pudiera derivarse del acceso o uso de este sitio web, las partes se someten a la jurisdicción de los Juzgados y Tribunales de la localidad del domicilio del titular, con renuncia expresa a cualquier otro fuero que pudiera corresponderles.</p>
+            <p>El titular se reserva el derecho a modificar el presente documento para adaptarlo a novedades legislativas, jurisprudenciales o a la práctica empresarial. Cualquier modificación será publicada en esta página con la fecha de actualización correspondiente.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;text-align:left;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.15)">
+            <div>
+                <h3 style="font-size:1.2rem;margin-bottom:10px;">Equilibra</h3>
+                <p style="opacity:0.75;font-size:0.9rem;line-height:1.8;">[Tu Dirección] · [Tu Ciudad]<br>Lunes a Viernes: 9:00 – 20:00</p>
+                <p style="margin-top:12px;"><a href="tel:+34600123456" style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-phone"></i> 600 123 456</a></p>
+            </div>
+            <div>
+                <h4 style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:14px;">Servicios</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+                    <li><a href="masaje-terapeutico.html">Masaje Terapéutico</a></li>
+                    <li><a href="nutricion-dietetica.html">Nutrición y Dietética</a></li>
+                    <li><a href="psicologia-bienestar.html">Psicología y Bienestar</a></li>
+                    <li><a href="pilates-terapeutico.html">Pilates Terapéutico</a></li>
+                    <li><a href="osteopatia.html">Osteopatía</a></li>
+                    <li><a href="equinoterapia-finca.html">Equinoterapia en Finca</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:14px;">Legal</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="condiciones-servicio.html">Condiciones del Servicio</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top:24px;font-size:0.85rem;opacity:0.6;text-align:center;">© 2026 Equilibra. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); navMenu.classList.toggle('active'); });
+            navMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { menuToggle.classList.remove('active'); navMenu.classList.remove('active'); }); });
+            document.addEventListener('click', (e) => { if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) { menuToggle.classList.remove('active'); navMenu.classList.remove('active'); } });
+        }
+    </script>
+</body>
+</html>

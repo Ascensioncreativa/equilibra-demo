@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terapia con caballos en finca natural en [Tu Ciudad]. Equinoterapia para niños, adultos y personas con necesidades especiales. Beneficios físicos y emocionales.">
+    <title>Equinoterapia — Terapia con Caballos | Equilibra</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta property="og:title" content="Equinoterapia — Terapia con Caballos | Equilibra">
+    <meta property="og:description" content="Terapia asistida con caballos en entorno natural de finca. Sesiones individuales y grupales para todas las edades.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Equinoterapia",
+        "name": "Equinoterapia — Terapia con Caballos en Finca",
+        "description": "Terapia asistida con caballos en entorno natural de finca. Sesiones individuales y grupales para todas las edades.",
+        "provider": {
+            "@type": "HealthAndBeautyBusiness",
+            "name": "Equilibra - Centro de Bienestar Integral",
+            "telephone": "+34600123456",
+            "url": "https://tudominio.com"
+        }
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #a85442;
+            --primary-dark: #8b4235;
+            --accent: #d4816f;
+            --text-dark: #2d2d2d;
+            --text-light: #666;
+            --bg-light: #faf8f6;
+            --white: #ffffff;
+            --whatsapp: #128C7E;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--text-dark); background: var(--white); }
+
+        /* Header */
+        .site-header { position: fixed; top: 0; left: 0; right: 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1001; padding: 10px 20px; transition: transform 0.3s ease; }
+        .site-header.hidden { transform: translateY(-100%); }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+        .logo span { color: var(--accent); }
+        .header-phone { display: flex; align-items: center; gap: 8px; background: var(--primary); color: var(--white); padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.3s ease; }
+        .header-phone:hover { background: var(--primary-dark); }
+        .header-phone i { font-size: 0.95rem; }
+
+        main { padding-top: 80px; }
+
+        /* Hero */
+        .service-hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .service-hero h1 { font-size: 2.2rem; margin-bottom: 15px; }
+        .service-hero p { font-size: 1.1rem; opacity: 0.95; max-width: 700px; margin: 0 auto; }
+        .breadcrumb { margin-bottom: 20px; font-size: 0.9rem; opacity: 0.8; }
+        .breadcrumb a { color: var(--white); text-decoration: none; }
+
+        /* Imagen -->*/
+        .service-image-wrap { width: 100%; max-height: 420px; overflow: hidden; }
+        .service-image-wrap img { width: 100%; height: 420px; object-fit: cover; display: block; }
+
+        /* Contenido */
+        .content-section { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
+        .content-section h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 20px; }
+        .content-section p { color: var(--text-light); margin-bottom: 15px; }
+        .content-section ul { list-style: none; padding: 0; }
+        .content-section ul li { color: var(--text-light); padding: 8px 0 8px 28px; border-bottom: 1px solid #f0f0f0; position: relative; }
+        .content-section ul li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+
+        /* Beneficios grid */
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .benefit-card { background: var(--bg-light); border-radius: 12px; padding: 25px 20px; text-align: center; }
+        .benefit-card i { font-size: 2rem; color: var(--primary); margin-bottom: 12px; display: block; }
+        .benefit-card h4 { color: var(--text-dark); margin-bottom: 8px; }
+        .benefit-card p { color: var(--text-light); font-size: 0.9rem; margin: 0; }
+
+        /* Perfiles para quién */
+        .perfiles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
+        .perfil-card { background: var(--bg-light); border-radius: 12px; padding: 28px 20px; text-align: center; transition: transform 0.3s ease; }
+        .perfil-card:hover { transform: translateY(-4px); }
+        .perfil-card i { font-size: 2rem; color: var(--primary); margin-bottom: 12px; display: block; }
+        .perfil-card h4 { color: var(--text-dark); margin-bottom: 8px; font-size: 1rem; }
+        .perfil-card p { color: var(--text-light); font-size: 0.88rem; line-height: 1.6; margin: 0; }
+
+        /* Tipos de sesión */
+        .sesiones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px; }
+        .sesion-card { background: var(--bg-light); border-radius: 12px; padding: 30px 24px; border-left: 4px solid var(--primary); }
+        .sesion-card i { font-size: 1.8rem; color: var(--primary); margin-bottom: 14px; display: block; }
+        .sesion-card h4 { color: var(--text-dark); font-size: 1.1rem; margin-bottom: 10px; }
+        .sesion-card p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; margin-bottom: 12px; }
+        .sesion-duracion { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
+        .sesion-duracion i { font-size: 0.8rem; margin-right: 4px; display: inline; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: var(--white); padding: 60px 20px; text-align: center; }
+        .cta-section h2 { font-size: 2rem; margin-bottom: 15px; }
+        .cta-section p { font-size: 1.1rem; opacity: 0.95; margin-bottom: 30px; }
+        .cta-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--white); color: var(--primary); padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .btn-primary i { font-size: 1rem; }
+        .btn-whatsapp { background: var(--whatsapp); color: var(--white); }
+        .btn-whatsapp:hover { background: #0e7269; }
+
+        /* Otros servicios */
+        .other-services { background: var(--bg-light); padding: 50px 20px; text-align: center; }
+        .other-services h2 { color: var(--primary); font-size: 1.6rem; margin-bottom: 30px; }
+        .services-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 900px; margin: 0 auto; }
+        .service-link { display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--primary); padding: 12px 22px; border-radius: 30px; text-decoration: none; font-weight: 600; border: 2px solid var(--primary); transition: all 0.3s ease; }
+        .service-link:hover { background: var(--primary); color: var(--white); }
+        .service-link i { font-size: 0.85rem; }
+
+        /* Footer */
+        footer { background: var(--primary-dark); color: rgba(255,255,255,0.9); padding: 40px 20px; text-align: center; }
+        footer h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        footer p { font-size: 0.9rem; margin-bottom: 6px; opacity: 0.85; }
+        footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Floating buttons */
+        .floating-buttons { position: fixed; bottom: 25px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .floating-btn { width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s ease; font-size: 1.4rem; color: #fff; border: 3px solid #fff; }
+        .floating-btn:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            .service-hero h1 { font-size: 1.6rem; }
+            .header-phone span { display: none; }
+        }
+        
+        /* === Nav === */
+        .nav-menu { display: flex; align-items: center; }
+        .nav-menu ul { display: flex; gap: 4px; list-style: none; padding: 0; margin: 0; }
+        .nav-menu li { border: none; }
+        .nav-menu a { padding: 8px 12px; font-size: 0.88rem; border-radius: 5px; color: var(--text-dark); text-decoration: none; font-weight: 500; transition: color 0.2s, background 0.2s; }
+        .nav-menu a:hover { color: var(--primary); background: var(--bg-light); }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1002; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s ease; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .nav-menu { display: none; position: fixed; top: 62px; left: 0; right: 0; background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.15); padding: 16px 20px; z-index: 1000; }
+            .nav-menu.active { display: block; }
+            .nav-menu ul { flex-direction: column; gap: 0; }
+            .nav-menu li { border-bottom: 1px solid #eee; }
+            .nav-menu li:last-child { border-bottom: none; }
+            .nav-menu a { padding: 13px 10px; font-size: 0.95rem; }
+        }
+        </style>
+</head>
+<body>
+    <header class="site-header" id="siteHeader">
+        <div class="header-container">
+            <a href="index.html" class="logo">Equili<span>bra</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="masaje-terapeutico.html">Masaje Terapéutico</a></li>
+                    <li><a href="nutricion-dietetica.html">Nutrición y Dietética</a></li>
+                    <li><a href="psicologia-bienestar.html">Psicología y Bienestar</a></li>
+                    <li><a href="pilates-terapeutico.html">Pilates Terapéutico</a></li>
+                    <li><a href="osteopatia.html">Osteopatía</a></li>
+                    <li><a href="equinoterapia-finca.html">Equinoterapia</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="tel:+34600123456" class="header-phone" aria-label="Llamar a Equilibra">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>600 123 456</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="service-hero">
+            <p class="breadcrumb"><a href="index.html">Inicio</a> &rsaquo; Equinoterapia</p>
+            <h1>Equinoterapia — Terapia con Caballos</h1>
+            <p>Sanar junto a un caballo en entorno natural de finca. Una experiencia transformadora para el cuerpo y la mente.</p>
+        </section>
+
+        <!-- Imagen -->
+        <div class="service-image-wrap">
+            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&h=420&fit=crop&auto=format" alt="Terapia con caballos en finca natural" width="1200" height="420" loading="eager">
+        </div>
+
+        <!-- Qué es -->
+        <section class="content-section">
+            <h2>¿Qué es la equinoterapia?</h2>
+            <p>La equinoterapia —también llamada hipoterapia o terapia asistida con équidos— es una intervención terapéutica que utiliza el movimiento y la presencia del caballo como herramienta de trabajo. A diferencia de la equitación deportiva, aquí el caballo no es el destino sino el medio.</p>
+            <p>Su movimiento tridimensional al paso reproduce el patrón de la marcha humana, estimulando la musculatura del tronco y el sistema neuromotor. Y su naturaleza sensible —los caballos reflejan con exactitud el estado emocional de quien los rodea— activa procesos de conciencia y regulación emocional que difícilmente se alcanzan en otros contextos.</p>
+            <p>Las sesiones se realizan en nuestra finca, rodeadas de naturaleza abierta, lo que potencia aún más el efecto terapéutico del entorno.</p>
+        </section>
+
+        <!-- Beneficios -->
+        <section class="content-section">
+            <h2>Beneficios de la terapia con caballos</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fa-solid fa-person-walking"></i>
+                    <h4>Equilibrio y coordinación</h4>
+                    <p>El movimiento del caballo estimula la musculatura del tronco y mejora el equilibrio y la coordinación motora.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <h4>Regulación emocional</h4>
+                    <p>Los caballos reflejan el estado emocional con honestidad. Eso ayuda a tomar conciencia de las propias emociones y regularlas.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-brain"></i>
+                    <h4>Reducción del estrés</h4>
+                    <p>El contacto con el caballo y el entorno natural reduce los niveles de cortisol y genera una calma profunda.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-star"></i>
+                    <h4>Autoestima y confianza</h4>
+                    <p>Establecer un vínculo con un animal de 500 kg que responde a tu presencia genera seguridad y sensación de capacidad.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-hands"></i>
+                    <h4>Comunicación no verbal</h4>
+                    <p>Con el caballo no valen las palabras. Se trabaja desde el cuerpo, desarrollando conciencia corporal y lenguaje no verbal.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h4>Responsabilidad y vínculo</h4>
+                    <p>El cuidado del animal desarrolla la empatía, la responsabilidad y la capacidad de relacionarse con el entorno.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Para quién -->
+        <section class="content-section">
+            <h2>¿Para quién está indicada?</h2>
+            <div class="perfiles-grid">
+                <div class="perfil-card">
+                    <i class="fa-solid fa-child"></i>
+                    <h4>Niños y adolescentes</h4>
+                    <p>TDAH, autismo, dificultades de aprendizaje o simplemente necesidad de conexión con la naturaleza.</p>
+                </div>
+                <div class="perfil-card">
+                    <i class="fa-solid fa-face-smile-beam"></i>
+                    <h4>Salud mental</h4>
+                    <p>Ansiedad, depresión, estrés crónico, trauma o burnout. El caballo trabaja donde las palabras no siempre llegan.</p>
+                </div>
+                <div class="perfil-card">
+                    <i class="fa-solid fa-wheelchair"></i>
+                    <h4>Diversidad funcional</h4>
+                    <p>Parálisis cerebral, síndrome de Down, esclerosis múltiple u otras condiciones neurológicas o físicas.</p>
+                </div>
+                <div class="perfil-card">
+                    <i class="fa-solid fa-person-cane"></i>
+                    <h4>Personas mayores</h4>
+                    <p>Mejora del equilibrio, estimulación cognitiva y reconexión con la naturaleza.</p>
+                </div>
+                <div class="perfil-card">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h4>Bienestar general</h4>
+                    <p>Sin diagnóstico previo. Para cualquier persona que quiera reconectar con su cuerpo o reducir el estrés.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qué incluye -->
+        <section class="content-section">
+            <h2>¿Qué incluye la sesión?</h2>
+            <ul>
+                <li>Bienvenida y preparación del caballo junto al terapeuta</li>
+                <li><strong>Valoración inicial</strong> de objetivos y estado del participante</li>
+                <li>Trabajo en tierra o sobre el caballo según el programa</li>
+                <li>Técnicas de <strong>regulación emocional</strong> asistidas por el caballo</li>
+                <li>Cuidado y cepillado del animal como parte de la terapia</li>
+                <li>Cierre y reflexión guiada al finalizar la sesión</li>
+            </ul>
+        </section>
+
+        <!-- Tipos de sesión -->
+        <section class="content-section">
+            <h2>Tipos de sesión</h2>
+            <div class="sesiones-grid">
+                <div class="sesion-card">
+                    <i class="fa-solid fa-person-riding-horse"></i>
+                    <h4>Hipoterapia</h4>
+                    <p>Sesión individual sobre el caballo en movimiento. El terapeuta trabaja desde el suelo mientras el movimiento del caballo estimula el sistema neuromotor.</p>
+                    <span class="sesion-duracion"><i class="fa-regular fa-clock"></i> 45–60 minutos · Individual</span>
+                </div>
+                <div class="sesion-card">
+                    <i class="fa-solid fa-horse-head"></i>
+                    <h4>Equitación terapéutica</h4>
+                    <p>Trabajo en tierra o sobre el caballo con objetivos emocionales o de desarrollo personal. No se requiere experiencia previa.</p>
+                    <span class="sesion-duracion"><i class="fa-regular fa-clock"></i> 60 minutos · Individual o grupo</span>
+                </div>
+                <div class="sesion-card">
+                    <i class="fa-solid fa-tree"></i>
+                    <h4>Experiencia en finca</h4>
+                    <p>Jornada de medio día en la finca: cuidado del caballo, actividades en tierra y paseo guiado. Ideal para familias o grupos.</p>
+                    <span class="sesion-duracion"><i class="fa-regular fa-clock"></i> 3–4 horas · Grupo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Reserva tu sesión de Equinoterapia</h2>
+            <p>Cuéntanos tu situación y te orientamos sobre qué tipo de sesión se adapta mejor a ti o a tu familiar.</p>
+            <div class="cta-buttons">
+                <a href="tel:+34600123456" class="btn-primary">
+                    <i class="fa-solid fa-phone"></i>
+                    Llamar Ahora
+                </a>
+                <a href="https://wa.me/34600123456?text=Hola,%20me%20interesa%20información%20sobre%20*Equinoterapia%20en%20Finca*" class="btn-primary btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Otros servicios -->
+        <section class="other-services">
+            <h2>Otros servicios de Equilibra</h2>
+            <div class="services-links">
+                <a href="masaje-terapeutico.html" class="service-link">
+                    <i class="fa-solid fa-chevron-right"></i> Masaje Terapéutico
+                </a>
+                <a href="nutricion-dietetica.html" class="service-link">
+                    <i class="fa-solid fa-chevron-right"></i> Nutrición y Dietética
+                </a>
+                <a href="psicologia-bienestar.html" class="service-link">
+                    <i class="fa-solid fa-chevron-right"></i> Psicología y Bienestar
+                </a>
+                <a href="pilates-terapeutico.html" class="service-link">
+                    <i class="fa-solid fa-chevron-right"></i> Pilates Terapéutico
+                </a>
+                <a href="osteopatia.html" class="service-link">
+                    <i class="fa-solid fa-chevron-right"></i> Osteopatía
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;text-align:left;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.15)">
+            <div>
+                <h3 style="font-size:1.2rem;margin-bottom:10px;">Equilibra</h3>
+                <p style="opacity:0.75;font-size:0.9rem;line-height:1.8;">[Tu Dirección] · [Tu Ciudad]<br>Lunes a Viernes: 9:00 – 20:00</p>
+                <p style="margin-top:12px;"><a href="tel:+34600123456" style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-phone"></i> 600 123 456</a></p>
+            </div>
+            <div>
+                <h4 style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:14px;">Servicios</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+                    <li><a href="masaje-terapeutico.html">Masaje Terapéutico</a></li>
+                    <li><a href="nutricion-dietetica.html">Nutrición y Dietética</a></li>
+                    <li><a href="psicologia-bienestar.html">Psicología y Bienestar</a></li>
+                    <li><a href="pilates-terapeutico.html">Pilates Terapéutico</a></li>
+                    <li><a href="osteopatia.html">Osteopatía</a></li>
+                    <li><a href="equinoterapia-finca.html">Equinoterapia en Finca</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:14px;">Legal</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="condiciones-servicio.html">Condiciones del Servicio</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top:24px;font-size:0.85rem;opacity:0.6;text-align:center;">© 2026 Equilibra. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Floating buttons -->
+    <div class="floating-buttons">
+        <a href="tel:+34600123456" class="floating-btn" style="background-color: var(--primary);" aria-label="Llamar a Equilibra">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="https://wa.me/34600123456?text=Hola,%20me%20interesa%20información%20sobre%20*Equinoterapia%20en%20Finca*" class="floating-btn" style="background-color: #128C7E;" aria-label="WhatsApp Equilibra">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        let lastScroll = 0;
+        const header = document.getElementById('siteHeader');
+        window.addEventListener('scroll', () => {
+            const cur = window.pageYOffset;
+            if (cur <= 0) { header.classList.remove('hidden'); return; }
+            if (cur > lastScroll && cur > 80) header.classList.add('hidden');
+            else header.classList.remove('hidden');
+            lastScroll = cur;
+        });
+    </script>
+</body>
+</html>

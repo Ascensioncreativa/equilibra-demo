@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Condiciones del Servicio de Equilibra - Centro de Bienestar Integral">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Condiciones del Servicio | Equilibra</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #a85442;
+            --primary-dark: #8b4235;
+            --accent: #d4816f;
+            --text-dark: #2d2d2d;
+            --text-light: #666;
+            --bg-light: #faf8f6;
+            --white: #ffffff;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.8; color: var(--text-dark); background: var(--white); }
+        .site-header { position: sticky; top: 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.08); z-index: 100; padding: 14px 20px; }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .header-back { display: flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: gap 0.2s; }
+        .header-back:hover { gap: 12px; }
+        .legal-hero { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; padding: 50px 20px; text-align: center; }
+        .legal-hero h1 { font-size: 2rem; margin-bottom: 10px; }
+        .legal-hero p { opacity: 0.85; font-size: 0.95rem; }
+        .legal-container { max-width: 860px; margin: 0 auto; padding: 60px 20px 80px; }
+        .toc { background: var(--bg-light); border-radius: 10px; padding: 28px 32px; margin-bottom: 50px; }
+        .toc h3 { color: var(--primary); text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 16px; }
+        .toc ol { padding-left: 20px; }
+        .toc li { margin-bottom: 6px; }
+        .toc a { color: var(--primary); text-decoration: none; font-size: 0.92rem; }
+        .toc a:hover { text-decoration: underline; }
+        .legal-section { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid #eee; }
+        .legal-section:last-child { border-bottom: none; }
+        .legal-section h2 { color: var(--primary); font-size: 1.35rem; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--bg-light); }
+        .legal-section h3 { color: var(--text-dark); font-size: 1.05rem; margin: 22px 0 10px; }
+        .legal-section p { color: var(--text-light); margin-bottom: 14px; }
+        .legal-section ul, .legal-section ol { padding-left: 22px; margin-bottom: 14px; }
+        .legal-section li { color: var(--text-light); margin-bottom: 8px; }
+        .dato { background: var(--bg-light); border-left: 3px solid var(--primary); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+        .dato p { margin: 0; color: var(--text-dark); font-size: 0.95rem; line-height: 1.9; }
+        .aviso { background: #fff8e1; border-left: 3px solid #f59e0b; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+        .aviso p { margin: 0; color: #78350f; font-size: 0.92rem; }
+        .aviso i { margin-right: 8px; color: #f59e0b; }
+        .update-date { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-light); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; color: var(--text-light); margin-bottom: 40px; }
+        footer { background: var(--primary-dark); color: rgba(255,255,255,0.85); padding: 40px 20px; text-align: center; }
+        footer h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        footer p { font-size: 0.88rem; opacity: 0.75; line-height: 1.8; }
+        footer a { color: rgba(255,255,255,0.9); text-decoration: none; }
+        .footer-links { display: flex; gap: 20px; justify-content: center; margin: 14px 0; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.85rem; color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; }
+        .footer-links a:hover { color: #fff; border-color: #fff; }
+        
+        /* === Nav === */
+        .nav-menu { display: flex; align-items: center; }
+        .nav-menu ul { display: flex; gap: 4px; list-style: none; padding: 0; margin: 0; }
+        .nav-menu li { border: none; }
+        .nav-menu a { padding: 8px 12px; font-size: 0.88rem; border-radius: 5px; color: var(--text-dark); text-decoration: none; font-weight: 500; transition: color 0.2s, background 0.2s; }
+        .nav-menu a:hover { color: var(--primary); background: var(--bg-light); }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1002; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s ease; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .nav-menu { display: none; position: fixed; top: 62px; left: 0; right: 0; background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.15); padding: 16px 20px; z-index: 1000; }
+            .nav-menu.active { display: block; }
+            .nav-menu ul { flex-direction: column; gap: 0; }
+            .nav-menu li { border-bottom: 1px solid #eee; }
+            .nav-menu li:last-child { border-bottom: none; }
+            .nav-menu a { padding: 13px 10px; font-size: 0.95rem; }
+        }
+        </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">Equili<span>bra</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="masaje-terapeutico.html">Masaje Terapéutico</a></li>
+                    <li><a href="nutricion-dietetica.html">Nutrición y Dietética</a></li>
+                    <li><a href="psicologia-bienestar.html">Psicología y Bienestar</a></li>
+                    <li><a href="pilates-terapeutico.html">Pilates Terapéutico</a></li>
+                    <li><a href="osteopatia.html">Osteopatía</a></li>
+                    <li><a href="equinoterapia-finca.html">Equinoterapia</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="tel:+34600123456" class="header-phone" aria-label="Llamar a Equilibra">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>600 123 456</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="legal-hero">
+        <h1>Condiciones del Servicio</h1>
+        <p>Términos y condiciones de contratación de los servicios de Equilibra — Centro de Bienestar Integral</p>
+    </section>
+
+    <div class="legal-container">
+        <p class="update-date"><i class="fa-regular fa-calendar"></i> Última actualización: enero de 2026</p>
+
+        <div class="toc">
+            <h3>Índice de contenidos</h3>
+            <ol>
+                <li><a href="#objeto">Objeto</a></li>
+                <li><a href="#servicios">Servicios ofrecidos</a></li>
+                <li><a href="#reservas">Reserva y confirmación de citas</a></li>
+                <li><a href="#cancelaciones">Cancelaciones y cambios</a></li>
+                <li><a href="#precios">Precios y formas de pago</a></li>
+                <li><a href="#contraindicaciones">Contraindicaciones y responsabilidad del usuario</a></li>
+                <li><a href="#responsabilidad">Limitación de responsabilidad</a></li>
+                <li><a href="#normativa">Normativa aplicable</a></li>
+            </ol>
+        </div>
+
+        <div class="legal-section" id="objeto">
+            <h2>1. Objeto</h2>
+            <p>Las presentes condiciones regulan la contratación y prestación de los servicios de bienestar integral ofrecidos por <strong>Equilibra — Centro de Bienestar Integral</strong> (en adelante, "Equilibra"), tanto a través de su sitio web como por los canales de contacto disponibles (teléfono y WhatsApp).</p>
+            <p>La solicitud o reserva de cualquier servicio implica la aceptación plena de las presentes condiciones por parte del usuario o cliente.</p>
+        </div>
+
+        <div class="legal-section" id="servicios">
+            <h2>2. Servicios ofrecidos</h2>
+            <p>Equilibra ofrece los siguientes servicios de bienestar y salud:</p>
+            <ul>
+                <li><strong>Masaje Terapéutico:</strong> Masaje manual con fines terapéuticos para alivio de tensiones musculares, contracturas y dolor.</li>
+                <li><strong>Nutrición y Dietética:</strong> Asesoramiento nutricional personalizado y elaboración de planes alimentarios.</li>
+                <li><strong>Psicología y Bienestar:</strong> Apoyo psicológico, gestión del estrés, ansiedad y bienestar emocional.</li>
+                <li><strong>Pilates Terapéutico:</strong> Sesiones de pilates con enfoque en la rehabilitación y mejora postural.</li>
+                <li><strong>Osteopatía:</strong> Tratamiento osteopático manual para el sistema musculoesquelético.</li>
+            </ul>
+            <p>Cada servicio es prestado por profesionales con la formación y titulación adecuadas. Equilibra se reserva el derecho a modificar, ampliar o reducir su catálogo de servicios.</p>
+        </div>
+
+        <div class="legal-section" id="reservas">
+            <h2>3. Reserva y confirmación de citas</h2>
+
+            <h3>Cómo reservar</h3>
+            <p>Las citas pueden solicitarse a través de los siguientes canales:</p>
+            <ul>
+                <li><i class="fa-solid fa-phone" style="color: var(--primary); margin-right: 6px;"></i> <strong>Llamada telefónica:</strong> <a href="tel:+34600123456">600 123 456</a></li>
+                <li><i class="fa-brands fa-whatsapp" style="color: #25d366; margin-right: 6px;"></i> <strong>WhatsApp:</strong> mensaje al 600 123 456</li>
+            </ul>
+
+            <h3>Confirmación</h3>
+            <p>La cita se considerará confirmada cuando el equipo de Equilibra haya respondido confirmando la fecha, hora y servicio acordados. Hasta ese momento, la solicitud está pendiente de confirmación.</p>
+
+            <div class="aviso">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Primera consulta:</strong> Para algunos servicios (nutrición, psicología) puede realizarse una llamada de valoración previa sin coste para verificar que el servicio es adecuado para el usuario.</p>
+            </div>
+        </div>
+
+        <div class="legal-section" id="cancelaciones">
+            <h2>4. Cancelaciones y cambios</h2>
+
+            <h3>Cancelación por parte del cliente</h3>
+            <ul>
+                <li><strong>Con más de 24 horas de antelación:</strong> Sin cargo. El cliente puede reagendar sin coste adicional.</li>
+                <li><strong>Con menos de 24 horas de antelación o no presentación:</strong> Puede aplicarse un cargo equivalente al 50% del precio de la sesión, a criterio de Equilibra y según la circunstancia.</li>
+            </ul>
+            <p>Para cancelar o modificar una cita, contacta con nosotros por teléfono o WhatsApp con la mayor antelación posible.</p>
+
+            <h3>Cancelación por parte de Equilibra</h3>
+            <p>En casos excepcionales (enfermedad del profesional, fuerza mayor), Equilibra podrá cancelar o reagendar una cita con el menor perjuicio posible para el cliente, ofreciendo siempre una alternativa en la mayor brevedad.</p>
+        </div>
+
+        <div class="legal-section" id="precios">
+            <h2>5. Precios y formas de pago</h2>
+            <p>Los precios de cada servicio serán informados antes de la confirmación de la cita. Los precios incluyen el IVA aplicable según la normativa vigente.</p>
+
+            <h3>Formas de pago aceptadas</h3>
+            <ul>
+                <li>Efectivo en el momento de la sesión</li>
+                <li>Transferencia bancaria (para reservas de bonos o paquetes)</li>
+                <li>Otros métodos que se indiquen en el momento de la reserva</li>
+            </ul>
+
+            <h3>Bonos y paquetes</h3>
+            <p>Los bonos de sesiones múltiples tienen una vigencia de <strong>3 meses</strong> desde la fecha de compra, salvo que se indique lo contrario. Los bonos son personales e intransferibles y no son reembolsables una vez iniciado su uso.</p>
+        </div>
+
+        <div class="legal-section" id="contraindicaciones">
+            <h2>6. Contraindicaciones y responsabilidad del usuario</h2>
+            <div class="aviso">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Importante:</strong> Los servicios de Equilibra tienen carácter complementario y de bienestar. No sustituyen en ningún caso el diagnóstico médico, el tratamiento médico prescrito ni la consulta con profesionales de la medicina.</p>
+            </div>
+            <p>El usuario es responsable de informar al profesional de Equilibra, antes del inicio de cada servicio, sobre:</p>
+            <ul>
+                <li>Condiciones médicas, lesiones, enfermedades o intervenciones quirúrgicas recientes.</li>
+                <li>Alergias o sensibilidades relevantes (a aceites, materiales, etc.).</li>
+                <li>Estado de embarazo o lactancia.</li>
+                <li>Cualquier circunstancia que pudiera afectar a la prestación del servicio.</li>
+            </ul>
+            <p>La ocultación de información médica relevante exime a Equilibra de cualquier responsabilidad por efectos adversos derivados de dicha ocultación.</p>
+        </div>
+
+        <div class="legal-section" id="responsabilidad">
+            <h2>7. Limitación de responsabilidad</h2>
+            <p>Equilibra no se hace responsable de:</p>
+            <ul>
+                <li>Los resultados específicos del tratamiento, ya que estos dependen de múltiples factores individuales y no pueden garantizarse.</li>
+                <li>Efectos adversos derivados de la ocultación de información médica relevante por parte del usuario.</li>
+                <li>Daños o perjuicios causados por el uso inadecuado de las indicaciones facilitadas por los profesionales.</li>
+                <li>La pérdida o deterioro de objetos personales en las instalaciones, salvo negligencia acreditada del personal.</li>
+            </ul>
+            <p>Los profesionales de Equilibra cuentan con seguro de responsabilidad civil para el ejercicio de su actividad.</p>
+        </div>
+
+        <div class="legal-section" id="normativa">
+            <h2>8. Normativa aplicable</h2>
+            <p>Las presentes condiciones se rigen por la legislación española. En particular:</p>
+            <ul>
+                <li>Ley 34/2002, de Servicios de la Sociedad de la Información (LSSI-CE)</li>
+                <li>Real Decreto Legislativo 1/2007, por el que se aprueba el Texto Refundido de la Ley General para la Defensa de los Consumidores y Usuarios</li>
+                <li>Reglamento (UE) 2016/679 General de Protección de Datos (RGPD)</li>
+                <li>Ley Orgánica 3/2018 de Protección de Datos Personales (LOPDGDD)</li>
+            </ul>
+            <p>Para cualquier controversia derivada de la interpretación o aplicación de estas condiciones, las partes se someten a los Juzgados y Tribunales del domicilio del titular, con renuncia a cualquier otro fuero.</p>
+            <p>Para reclamaciones de consumo, puedes acudir a la Oficina Municipal de Información al Consumidor (OMIC) de tu localidad o a las Juntas Arbitrales de Consumo.</p>
+
+            <div class="dato">
+                <p>
+                    <strong><i class="fa-solid fa-envelope" style="color: var(--primary); margin-right: 6px;"></i> Contacto para reclamaciones:</strong><br>
+                    <a href="mailto:info@equilibra.es">info@equilibra.es</a> · <a href="tel:+34600123456">600 123 456</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;text-align:left;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.15)">
+            <div>
+                <h3 style="font-size:1.2rem;margin-bottom:10px;">Equilibra</h3>
+                <p style="opacity:0.75;font-size:0.9rem;line-height:1.8;">[Tu Dirección] · [Tu Ciudad]<br>Lunes a Viernes: 9:00 – 20:00</p>
+                <p style="margin-top:12px;"><a href="tel:+34600123456" style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-phone"></i> 600 123 456</a></p>
+            </div>
+            <div>
+                <h4 style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:14px;">Servicios</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+                    <li><a href="masaje-terapeutico.html">Masaje Terapéutico</a></li>
+                    <li><a href="nutricion-dietetica.html">Nutrición y Dietética</a></li>
+                    <li><a href="psicologia-bienestar.html">Psicología y Bienestar</a></li>
+                    <li><a href="pilates-terapeutico.html">Pilates Terapéutico</a></li>
+                    <li><a href="osteopatia.html">Osteopatía</a></li>
+                    <li><a href="equinoterapia-finca.html">Equinoterapia en Finca</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:14px;">Legal</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="condiciones-servicio.html">Condiciones del Servicio</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top:24px;font-size:0.85rem;opacity:0.6;text-align:center;">© 2026 Equilibra. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); navMenu.classList.toggle('active'); });
+            navMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { menuToggle.classList.remove('active'); navMenu.classList.remove('active'); }); });
+            document.addEventListener('click', (e) => { if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) { menuToggle.classList.remove('active'); navMenu.classList.remove('active'); } });
+        }
+    </script>
+</body>
+</html>

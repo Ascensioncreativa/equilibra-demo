@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro de bienestar integral en [Tu Ciudad]: masajes terapéuticos, nutrición, psicología, pilates y osteopatía. Profesionales especializados en tu salud y bienestar.">
+    <meta name="keywords" content="centro bienestar [ciudad], masajes terapéuticos, nutrición dietética, psicología, pilates, osteopatía, salud integral">
+    <title>Equilibra | Centro de Bienestar Integral en [Tu Ciudad]</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Equilibra | Centro de Bienestar Integral">
+    <meta property="og:description" content="Masajes, nutrición, psicología, pilates y osteopatía. Tu bienestar integral en un solo centro.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Equilibra - Centro de Bienestar Integral",
+      "description": "Centro de bienestar integral: masajes terapéuticos, nutrición personalizada, psicología, pilates terapéutico y osteopatía.",
+      "url": "https://tudominio.com",
+      "telephone": "+34600123456",
+      "email": "hola@equilibra.com",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "[Tu Dirección]",
+        "addressLocality": "[Tu Ciudad]",
+        "addressCountry": "ES"
+      },
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "20:00"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Bienestar",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Masaje Terapéutico"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Nutrición y Dietética"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Psicología y Bienestar Emocional"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pilates Terapéutico"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Osteopatía"}}
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #a85442;
+            --primary-dark: #8b4235;
+            --accent: #d4816f;
+            --text-dark: #2d2d2d;
+            --text-light: #666;
+            --bg-light: #faf8f6;
+            --white: #ffffff;
+            --whatsapp: #128C7E;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: var(--text-dark); background: var(--white); }
+
+        /* Header */
+        .site-header { position: fixed; top: 0; left: 0; right: 0; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1001; padding: 10px 20px; transition: transform 0.3s ease; }
+        .site-header.hidden { transform: translateY(-100%); }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+        .logo span { color: var(--accent); }
+        .header-phone { display: flex; align-items: center; gap: 8px; background: var(--primary); color: var(--white); padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .header-phone:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+
+        /* Menú de Navegación */
+        .nav-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.15); padding: 20px; transform: translateY(-100%); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1000; }
+        .nav-menu.active { display: block; transform: translateY(0); opacity: 1; visibility: visible; }
+        .nav-menu ul { list-style: none; padding: 0; margin: 0; }
+        .nav-menu li { border-bottom: 1px solid #eee; }
+        .nav-menu li:last-child { border-bottom: none; }
+        .nav-menu a { display: block; padding: 15px 10px; color: var(--text-dark); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        .nav-menu a:hover { color: var(--primary); }
+        .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1002; }
+        .menu-toggle span { display: block; width: 25px; height: 3px; background: var(--primary); border-radius: 2px; transition: all 0.3s ease; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, rgba(244,250,248,0.92) 0%, rgba(212,237,230,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=1600&h=700&fit=crop&auto=format') center/cover no-repeat;
+            color: #1a1a1a; padding: 120px 20px 80px; text-align: center; position: relative;
+        }
+        .hero h1 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; color: #111; }
+        .hero p { font-size: 1.05rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; color: #222; font-weight: 600; line-height: 1.7; background: rgba(255,255,255,0.6); padding: 20px; border-radius: 12px; }
+        .cta-buttons { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; max-width: 400px; margin: 0 auto; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 30px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border-radius: 12px; transition: all 0.3s ease; }
+        .btn-primary { background: var(--primary); color: var(--white); }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .btn-whatsapp { background: var(--whatsapp); color: var(--white); }
+        .btn-whatsapp:hover { background: #0e6b5e; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(18,140,126,0.3); }
+
+        /* About */
+        .about { padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .about h2 { font-size: 2rem; color: var(--text-dark); margin-bottom: 30px; font-weight: 700; }
+        .about-content { font-size: 1.05rem; line-height: 1.8; color: var(--text-light); text-align: left; }
+
+        /* Services */
+        .services { padding: 60px 20px; background: var(--bg-light); }
+        .services-inner { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2rem; color: var(--text-dark); margin-bottom: 50px; font-weight: 700; }
+        .services-grid { display: grid; gap: 30px; }
+        .service-card { background: var(--primary); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .service-image { width: 100%; height: 240px; object-fit: cover; display: block; }
+
+        .service-image { width: 100%; height: 240px; object-fit: cover; display: block; }
+
+        .service-content { padding: 25px; background: var(--primary); color: var(--white); }
+        .service-content h3 { font-size: 1.4rem; margin-bottom: 12px; font-weight: 600; }
+        .service-content h3 a { color: var(--white); text-decoration: underline; transition: opacity 0.3s ease; }
+        .service-content h3 a:hover { opacity: 0.85; }
+        .service-desc { font-size: 0.95rem; margin-bottom: 15px; opacity: 0.95; }
+        .service-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+        .service-btn { background: var(--white); color: var(--primary-dark); padding: 12px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; flex: 1; justify-content: center; min-width: 130px; }
+        .service-btn:hover { transform: translateY(-2px); }
+        .service-btn-phone:hover { background: #e8f8f4; box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+        .service-btn-whatsapp { background: #5c1f12; color: var(--white); }
+        .service-btn-whatsapp:hover { background: #3d1209; box-shadow: 0 6px 20px rgba(0,0,0,0.35); }
+        .service-btn i, .btn i, .header-phone i, .floating-btn i { font-size: 1rem; flex-shrink: 0; }
+        .floating-btn i { font-size: 1.3rem; }
+        .feature h3 i { color: var(--primary); font-size: 1.1rem; }
+
+        /* Why Choose */
+        .why-choose { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        .features-grid { display: grid; gap: 25px; margin-top: 40px; }
+        .feature { background: var(--white); padding: 25px; border-radius: 12px; border-left: 4px solid var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .feature h3 { color: var(--primary); font-size: 1.2rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .feature p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* Testimonials */
+        .testimonials { padding: 60px 20px; background: var(--bg-light); }
+        .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+        .testimonials-grid { display: grid; gap: 30px; margin-top: 40px; }
+        .testimonial-card { background: var(--white); padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .testimonial-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .testimonial-avatar { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.5rem; font-weight: 700; flex-shrink: 0; }
+        .testimonial-name { color: var(--text-dark); font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
+        .testimonial-stars { color: #fbbf24; font-size: 1.1rem; }
+        .testimonial-text { color: var(--text-light); font-size: 1rem; line-height: 1.7; font-style: italic; }
+        .testimonial-date { color: #888; font-size: 0.85rem; margin-top: 15px; }
+        .rating-summary { text-align: center; margin-bottom: 40px; }
+        .rating-stars-big { font-size: 2.5rem; color: #fbbf24; letter-spacing: 5px; }
+        .rating-score { font-size: 3rem; font-weight: 800; color: var(--text-dark); margin: 10px 0 5px; }
+        .rating-count { font-size: 1rem; color: var(--text-light); }
+        .testimonials-center { text-align: center; margin-top: 30px; }
+        .google-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--white); padding: 15px 25px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-size: 1rem; font-weight: 600; color: var(--text-dark); }
+        .google-buttons-container { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 25px; }
+        .btn-google-review { display: inline-flex; align-items: center; gap: 10px; background: var(--white); color: var(--text-dark); padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 2px solid #fbbc04; transition: all 0.3s ease; }
+        .btn-google-review:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+        /* Footer */
+        footer { background: var(--primary-dark); color: var(--white); padding: 40px 20px; text-align: center; }
+        footer h3 { margin-bottom: 20px; font-size: 1.5rem; }
+        footer p { font-size: 0.95rem; margin: 10px 0; }
+        footer a { color: var(--white); text-decoration: none; }
+        footer .footer-secondary { color: rgba(255,255,255,0.85); }
+        footer .footer-copyright { color: rgba(255,255,255,0.75); }
+
+        /* Floating Buttons */
+        .floating-buttons { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+        .floating-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: all 0.3s ease; border: 3px solid #fff; }
+        .floating-btn:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(0,0,0,0.3); }
+        .icon { width: 24px; height: 24px; }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .site-header { padding: 8px 12px; }
+            .logo { font-size: 1.3rem; }
+            .header-phone { padding: 8px 14px; font-size: 0.85rem; }
+        }
+        @media (min-width: 768px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta-buttons { flex-direction: row; max-width: 600px; }
+            .service-image, .service-image-placeholder { height: 280px; }
+        }
+        @media (min-width: 992px) {
+            .menu-toggle { display: none; }
+            .nav-menu { display: flex !important; position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; padding: 0; background: transparent; }
+            .nav-menu ul { display: flex; gap: 5px; }
+            .nav-menu li { border: none; }
+            .nav-menu a { padding: 8px 12px; font-size: 0.9rem; border-radius: 5px; }
+            .nav-menu a:hover { background: var(--bg-light); }
+        }
+        @media (min-width: 1024px) {
+            .hero h1 { font-size: 3rem; }
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+            .features-grid { grid-template-columns: repeat(3, 1fr); }
+            .service-image, .service-image-placeholder { height: 300px; }
+        }
+        
+        /* === Nav === */
+        .nav-menu { display: flex; align-items: center; }
+        .nav-menu ul { display: flex; gap: 4px; list-style: none; padding: 0; margin: 0; }
+        .nav-menu li { border: none; }
+        .nav-menu a { padding: 8px 12px; font-size: 0.88rem; border-radius: 5px; color: var(--text-dark); text-decoration: none; font-weight: 500; transition: color 0.2s, background 0.2s; }
+        .nav-menu a:hover { color: var(--primary); background: var(--bg-light); }
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; z-index: 1002; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--primary); border-radius: 2px; transition: all 0.3s ease; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .nav-menu { display: none; position: fixed; top: 62px; left: 0; right: 0; background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.15); padding: 16px 20px; z-index: 1000; }
+            .nav-menu.active { display: block; }
+            .nav-menu ul { flex-direction: column; gap: 0; }
+            .nav-menu li { border-bottom: 1px solid #eee; }
+            .nav-menu li:last-child { border-bottom: none; }
+            .nav-menu a { padding: 13px 10px; font-size: 0.95rem; }
+        }
+        </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="logo">Equilibra<span>·</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="masaje-terapeutico.html">Masajes</a></li>
+                    <li><a href="nutricion-dietetica.html">Nutrición</a></li>
+                    <li><a href="psicologia-bienestar.html">Psicología</a></li>
+                    <li><a href="pilates-terapeutico.html">Pilates</a></li>
+                    <li><a href="osteopatia.html">Osteopatía</a></li>
+                    <li><a href="equinoterapia-finca.html">Equinoterapia</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="tel:+34600123456" class="header-phone" aria-label="Llamar al 600 123 456">
+                    <i class="fa-solid fa-phone"></i>
+                    600 123 456
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <h1>Centro de Bienestar Integral en [Tu Ciudad]</h1>
+            <p>Masajes, nutrición, psicología, pilates y osteopatía. Un equipo de profesionales especializados para cuidar tu salud y tu bienestar desde adentro.</p>
+            <div class="cta-buttons">
+                <a href="tel:+34600123456" class="btn btn-primary" aria-label="Llamar ahora">
+                    <i class="fa-solid fa-phone"></i>
+                    Llamar Ahora
+                </a>
+                <a href="https://wa.me/34600123456?text=Hola,%20quiero%20información%20sobre%20vuestros%20servicios%20de%20bienestar" class="btn btn-whatsapp" aria-label="Contactar por WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about">
+            <h2>Tu bienestar, nuestro compromiso</h2>
+            <div class="about-content">
+                <p><strong>Equilibra</strong> es un centro de <strong>bienestar integral</strong> que reúne bajo un mismo techo a profesionales especializados en salud física, mental y nutricional. Creemos que el bienestar real es el resultado del equilibrio entre el cuerpo y la mente.</p>
+                <p>Nuestro equipo ofrece <strong>masajes terapéuticos</strong>, <strong>asesoramiento nutricional</strong>, <strong>apoyo psicológico</strong>, <strong>pilates terapéutico</strong> y <strong>osteopatía</strong>, con un enfoque personalizado para cada persona.</p>
+                <br>
+                <p>Trabajamos con personas que buscan <strong>aliviar el dolor</strong>, mejorar su <strong>alimentación</strong>, gestionar el <strong>estrés y la ansiedad</strong>, recuperar la <strong>movilidad y la postura</strong>, o simplemente cuidarse más. Seas quien seas, tenemos el servicio que necesitas.</p>
+                <br>
+                <p>Llama o escríbenos hoy para reservar tu primera consulta y dar el primer paso hacia una <strong>vida más equilibrada y saludable</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services">
+            <div class="services-inner">
+                <h2 class="section-title">Nuestros Servicios de Bienestar</h2>
+                <div class="services-grid">
+
+                    <!-- Masaje Terapéutico -->
+                    <div class="service-card" id="masaje">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=500&fit=crop&auto=format" alt="Masaje terapéutico profesional" class="service-image" width="800" height="500" loading="lazy">
+                        <div class="service-content">
+                            <h3>Masaje Terapéutico</h3>
+                            <p class="service-desc">Sesiones de masaje profesional para aliviar tensiones musculares, reducir el dolor y mejorar la circulación. Técnicas adaptadas a cada persona y necesidad.</p>
+                            <div class="service-buttons">
+                                <a href="tel:+34600123456" class="service-btn service-btn-phone" aria-label="Llamar para reservar masaje">
+                                    <i class="fa-solid fa-phone"></i>
+                                    Llamar
+                                </a>
+                                <a href="https://wa.me/34600123456?text=Hola,%20quiero%20reservar%20una%20sesión%20de%20*Masaje%20Terapéutico*" class="service-btn service-btn-whatsapp" aria-label="WhatsApp para masaje terapéutico">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nutrición -->
+                    <div class="service-card" id="nutricion">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=500&fit=crop&auto=format" alt="Nutrición y alimentación saludable" class="service-image" width="800" height="500" loading="lazy">
+                        <div class="service-content">
+                            <h3>Nutrición y Dietética</h3>
+                            <p class="service-desc">Asesoramiento nutricional personalizado para mejorar tu alimentación y alcanzar tus objetivos: pérdida de peso, rendimiento deportivo, salud digestiva o nutrición clínica.</p>
+                            <div class="service-buttons">
+                                <a href="tel:+34600123456" class="service-btn service-btn-phone" aria-label="Llamar para consulta de nutrición">
+                                    <i class="fa-solid fa-phone"></i>
+                                    Llamar
+                                </a>
+                                <a href="https://wa.me/34600123456?text=Hola,%20me%20interesa%20una%20consulta%20de%20*Nutrición%20y%20Dietética*" class="service-btn service-btn-whatsapp" aria-label="WhatsApp para nutrición">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Psicología -->
+                    <div class="service-card" id="psicologia">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=500&fit=crop&auto=format" alt="Psicología y bienestar emocional" class="service-image" width="800" height="500" loading="lazy">
+                        <div class="service-content">
+                            <h3>Psicología y Bienestar Emocional</h3>
+                            <p class="service-desc">Apoyo psicológico profesional para gestionar el estrés, la ansiedad, la depresión o cualquier dificultad emocional. Sesiones presenciales y online disponibles.</p>
+                            <div class="service-buttons">
+                                <a href="tel:+34600123456" class="service-btn service-btn-phone" aria-label="Llamar para cita de psicología">
+                                    <i class="fa-solid fa-phone"></i>
+                                    Llamar
+                                </a>
+                                <a href="https://wa.me/34600123456?text=Hola,%20me%20gustaría%20información%20sobre%20*Psicología%20y%20Bienestar%20Emocional*" class="service-btn service-btn-whatsapp" aria-label="WhatsApp para psicología">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pilates -->
+                    <div class="service-card" id="pilates">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=500&fit=crop&auto=format" alt="Pilates terapéutico en grupo" class="service-image" width="800" height="500" loading="lazy">
+                        <div class="service-content">
+                            <h3>Pilates Terapéutico</h3>
+                            <p class="service-desc">Clases de pilates dirigidas por fisioterapeutas para mejorar la postura, la flexibilidad y la fuerza del core. Grupos reducidos y sesiones individuales disponibles.</p>
+                            <div class="service-buttons">
+                                <a href="tel:+34600123456" class="service-btn service-btn-phone" aria-label="Llamar para pilates">
+                                    <i class="fa-solid fa-phone"></i>
+                                    Llamar
+                                </a>
+                                <a href="https://wa.me/34600123456?text=Hola,%20quiero%20información%20sobre%20*Pilates%20Terapéutico*" class="service-btn service-btn-whatsapp" aria-label="WhatsApp para pilates">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Osteopatía -->
+                    <div class="service-card" id="osteopatia">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop&auto=format" alt="Osteopatía y tratamiento manual" class="service-image" width="800" height="500" loading="lazy">
+                        <div class="service-content">
+                            <h3>Osteopatía</h3>
+                            <p class="service-desc">Tratamiento osteopático integral para recuperar el equilibrio corporal, aliviar dolores musculoesqueléticos y mejorar el funcionamiento del organismo de forma natural.</p>
+                            <div class="service-buttons">
+                                <a href="tel:+34600123456" class="service-btn service-btn-phone" aria-label="Llamar para osteopatía">
+                                    <i class="fa-solid fa-phone"></i>
+                                    Llamar
+                                </a>
+                                <a href="https://wa.me/34600123456?text=Hola,%20me%20interesa%20una%20cita%20de%20*Osteopatía*" class="service-btn service-btn-whatsapp" aria-label="WhatsApp para osteopatía">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose -->
+        <section class="why-choose">
+            <h2 class="section-title">¿Por qué elegir Equilibra?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3><i class="fa-solid fa-building-circle-check"></i> Todo en un solo centro</h3>
+                    <p>Cinco especialidades de bienestar bajo un mismo techo. Sin desplazamientos innecesarios entre profesionales.</p>
+                </div>
+                <div class="feature">
+                    <h3><i class="fa-solid fa-user-check"></i> Atención personalizada</h3>
+                    <p>Cada persona es única. Diseñamos un plan adaptado a tus necesidades, objetivos y ritmo de vida.</p>
+                </div>
+                <div class="feature">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Profesionales titulados</h3>
+                    <p>Todo nuestro equipo cuenta con titulación oficial y formación continua en sus respectivas especialidades.</p>
+                </div>
+                <div class="feature">
+                    <h3><i class="fa-solid fa-clock"></i> Horario flexible</h3>
+                    <p>Mañanas y tardes disponibles. Adaptamos las citas a tu disponibilidad para que no tengas excusas.</p>
+                </div>
+                <div class="feature">
+                    <h3><i class="fa-brands fa-whatsapp"></i> Respuesta inmediata por WhatsApp</h3>
+                    <p>Contacta directamente con el servicio que necesitas. Respuesta rápida y reserva sin complicaciones.</p>
+                </div>
+                <div class="feature">
+                    <h3><i class="fa-solid fa-location-dot"></i> Ubicación céntrica</h3>
+                    <p>Fácil acceso y aparcamiento cercano. También ofrecemos algunas sesiones a domicilio bajo consulta.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="testimonials-inner">
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+                <div class="rating-summary">
+                    <div class="rating-stars-big">★★★★★</div>
+                    <div class="rating-score">5.0</div>
+                    <div class="rating-count">Basado en reseñas de Google</div>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #a85442, #d4816f);">A</div>
+                            <div class="testimonial-info">
+                                <p class="testimonial-name">Ana García</p>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Llevo tres meses con la nutricionista y los resultados son increíbles. Por fin alguien que me escucha y me da un plan real, no una dieta genérica."</p>
+                        <p class="testimonial-date">Hace 1 mes</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #4CAF50, #45a049);">R</div>
+                            <div class="testimonial-info">
+                                <p class="testimonial-name">Roberto Sánchez</p>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"El masaje terapéutico me ha quitado la contractura de meses en el cuello. Profesional y muy agradable el trato. Volvería sin dudarlo."</p>
+                        <p class="testimonial-date">Hace 2 meses</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #2196F3, #1976D2);">M</div>
+                            <div class="testimonial-info">
+                                <p class="testimonial-name">María López</p>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Las clases de pilates terapéutico han mejorado muchísimo mi postura. Noto la diferencia en el trabajo. El grupo es pequeño y la atención muy personalizada."</p>
+                        <p class="testimonial-date">Hace 3 meses</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #9C27B0, #7B1FA2);">C</div>
+                            <div class="testimonial-info">
+                                <p class="testimonial-name">Carlos Martín</p>
+                                <div class="testimonial-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"La psicóloga es excelente. Me ayudó a gestionar la ansiedad con herramientas prácticas. Recomiendo el centro al 100%, ambiente muy acogedor."</p>
+                        <p class="testimonial-date">Hace 2 meses</p>
+                    </div>
+                </div>
+                <div class="testimonials-center">
+                    <div class="google-badge">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Reseñas verificadas de Google
+                    </div>
+                    <div class="google-buttons-container">
+                        <a href="#" class="btn-google-review" aria-label="Dejar reseña en Google">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            Déjanos tu reseña
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;text-align:left;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.15)">
+            <div>
+                <h3 style="font-size:1.2rem;margin-bottom:10px;">Equilibra</h3>
+                <p style="opacity:0.75;font-size:0.9rem;line-height:1.8;">[Tu Dirección] · [Tu Ciudad]<br>Lunes a Viernes: 9:00 – 20:00</p>
+                <p style="margin-top:12px;"><a href="tel:+34600123456" style="display:inline-flex;align-items:center;gap:6px;"><i class="fa-solid fa-phone"></i> 600 123 456</a></p>
+            </div>
+            <div>
+                <h4 style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:14px;">Servicios</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+                    <li><a href="masaje-terapeutico.html">Masaje Terapéutico</a></li>
+                    <li><a href="nutricion-dietetica.html">Nutrición y Dietética</a></li>
+                    <li><a href="psicologia-bienestar.html">Psicología y Bienestar</a></li>
+                    <li><a href="pilates-terapeutico.html">Pilates Terapéutico</a></li>
+                    <li><a href="osteopatia.html">Osteopatía</a></li>
+                    <li><a href="equinoterapia-finca.html">Equinoterapia en Finca</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;opacity:0.6;margin-bottom:14px;">Legal</h4>
+                <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="condiciones-servicio.html">Condiciones del Servicio</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top:24px;font-size:0.85rem;opacity:0.6;text-align:center;">© 2026 Equilibra. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:+34600123456" class="floating-btn" style="background-color: #a85442; color: #fff; border: 3px solid #fff;" aria-label="Llamar al 600 123 456">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="https://wa.me/34600123456?text=Hola,%20quiero%20información%20sobre%20vuestros%20servicios" class="floating-btn" style="background-color: #128C7E; color: #fff; border: 3px solid #fff;" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Header hide on scroll
+        let lastScroll = 0;
+        const header = document.querySelector('.site-header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) { header.classList.remove('hidden'); return; }
+            if (currentScroll > lastScroll && currentScroll > 80) { header.classList.add('hidden'); }
+            else { header.classList.remove('hidden'); }
+            lastScroll = currentScroll;
+        });
+
+        // Menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); navMenu.classList.toggle('active'); });
+            navMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { menuToggle.classList.remove('active'); navMenu.classList.remove('active'); }); });
+            document.addEventListener('click', (e) => { if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) { menuToggle.classList.remove('active'); navMenu.classList.remove('active'); } });
+        }
+    </script>
+</body>
+</html>
